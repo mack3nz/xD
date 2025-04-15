@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Importance of Cybersecurity</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <h1>The Importance of Cybersecurity (Cibersegurança)</h1>
+
+  <p>Cybersecurity is essential in today’s digital world. As we depend more on the internet for communication, shopping, banking, and storing sensitive information, protecting our data has never been more critical.</p>
+  <p>Cyberattacks can cause data breaches, financial loss, and damage to a company’s reputation. Developers, companies, and users must follow good security practices to avoid these threats.</p>
+  <p>Security involves not only technology but also awareness and behavior. Using strong passwords, enabling two-factor authentication, and keeping systems updated are key actions.</p>
+  <p>With the rise of cloud computing and remote work, cybersecurity has become even more important, requiring constant monitoring and quick responses to threats.</p>
+
+  <h2>Reading Comprehension & Grammar Quiz</h2>
+
+  <form id="quizForm">
+
+    <div class="question">
+      <p>1. Cybersecurity is only important for companies.</p>
+      <label><input type="radio" name="q1" value="false"> False</label>
+      <label><input type="radio" name="q1" value="true"> True</label>
+    </div>
+
+    <div class="question">
+      <p>2. What is an example of a good security practice?</p>
+      <label><input type="radio" name="q2" value="a"> Ignoring system updates</label>
+      <label><input type="radio" name="q2" value="b"> Using weak passwords</label>
+      <label><input type="radio" name="q2" value="c"> Enabling two-factor authentication</label>
+    </div>
+
+    <div class="question">
+      <p>3. Present Perfect: Amazon ______ AWS, but Google ______ its cloud service yet.</p>
+      <label><input type="radio" name="q3" value="a"> launched / didn’t release</label>
+      <label><input type="radio" name="q3" value="b"> has launched / has not released</label>
+      <label><input type="radio" name="q3" value="c"> was launching / has not been releasing</label>
+    </div>
+
+    <div class="question">
+      <p>4. Question with "ever": ______ you ever ______ a complex code?</p>
+      <label><input type="radio" name="q4" value="a"> Did / debugged</label>
+      <label><input type="radio" name="q4" value="b"> Have / debugged</label>
+      <label><input type="radio" name="q4" value="c"> Has / debug</label>
+    </div>
+
+    <div class="question">
+      <p>5. Present Perfect: The update ______ yet.</p>
+      <label><input type="radio" name="q5" value="a"> hasn’t been installed</label>
+      <label><input type="radio" name="q5" value="b"> didn’t install</label>
+      <label><input type="radio" name="q5" value="c"> was not installed</label>
+    </div>
+
+    <div class="question">
+      <p>6. Simple Past: Linux ______ by Linus Torvalds. He ______ the first code.</p>
+      <label><input type="radio" name="q6" value="a"> was created / wrote</label>
+      <label><input type="radio" name="q6" value="b"> has been created / writes</label>
+      <label><input type="radio" name="q6" value="c"> created / was writing</label>
+    </div>
+
+    <div class="question">
+      <p>7. Correct the sentence: "Mark Zuckerberg has created Facebook in 2004."</p>
+      <label><input type="radio" name="q7" value="a"> Mark Zuckerberg has created Facebook in 2004.</label>
+      <label><input type="radio" name="q7" value="b"> Mark Zuckerberg created Facebook in 2004.</label>
+      <label><input type="radio" name="q7" value="c"> Mark Zuckerberg was creating Facebook in 2004.</label>
+    </div>
+
+    <div class="question">
+      <p>8. Past Continuous: While Tim Berners-Lee ______, he ______ the Web.</p>
+      <label><input type="radio" name="q8" value="a"> works / creates</label>
+      <label><input type="radio" name="q8" value="b"> was working / was creating</label>
+      <label><input type="radio" name="q8" value="c"> worked / created</label>
+    </div>
+
+    <div class="question">
+      <p>9. Interrogative: The developers were excited → ______ the developers excited?</p>
+      <label><input type="radio" name="q9" value="a"> Were</label>
+      <label><input type="radio" name="q9" value="b"> Did</label>
+      <label><input type="radio" name="q9" value="c"> Are</label>
+    </div>
+
+    <div class="question">
+      <p>10. Bill Gates was the founder of Apple.</p>
+      <label><input type="radio" name="q10" value="true"> True</label>
+      <label><input type="radio" name="q10" value="false"> False</label>
+    </div>
+
+    <button type="button" onclick="checkQuiz()">Enviar</button>
+
+    <div class="feedback" id="feedback"></div>
+
+  </form>
+
+  <script>
+    function checkQuiz() {
+      const correctAnswers = {
+        q1: "false",
+        q2: "c",
+        q3: "b",
+        q4: "b",
+        q5: "a",
+        q6: "a",
+        q7: "b",
+        q8: "b",
+        q9: "a",
+        q10: "false"
+      };
+  
+      let total = Object.keys(correctAnswers).length;
+      let score = 0;
+  
+      let unanswered = [];
+  
+      // Limpar feedback anterior
+      const allQuestions = document.querySelectorAll(".question");
+      allQuestions.forEach(q => q.classList.remove("correct", "incorrect"));
+  
+      for (let key in correctAnswers) {
+        const selected = document.querySelector(`input[name="${key}"]:checked`);
+        const questionDiv = document.querySelector(`input[name="${key}"]`).closest(".question");
+  
+        if (!selected) {
+          unanswered.push(key);
+          questionDiv.style.border = "2px solid orange"; // Visual hint
+        } else {
+          questionDiv.style.border = "none"; // Reset visual hint
+  
+          if (selected.value === correctAnswers[key]) {
+            score++;
+            questionDiv.classList.add("correct");
+          } else {
+            questionDiv.classList.add("incorrect");
+  
+            // Marcar a resposta correta
+            const correctOption = document.querySelector(`input[name="${key}"][value="${correctAnswers[key]}"]`);
+            if (correctOption) {
+              correctOption.parentElement.style.color = "green";
+              selected.parentElement.style.color = "red";
+            }
+          }
+        }
+      }
+  
+      const feedback = document.getElementById("feedback");
+  
+      if (unanswered.length > 0) {
+        feedback.innerHTML = `<p style="color: orange;">Por favor, responda todas as questões antes de enviar.</p>`;
+      } else {
+        feedback.innerHTML = `<p>Você acertou ${score} de ${total} perguntas.</p>`;
+      }
+    }
+  </script>
+  
