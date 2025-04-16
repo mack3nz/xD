@@ -10,7 +10,7 @@ body {
   background: #f2f6fa;
   color: #2c3e50;
   padding: 30px;
-  line-height: 1.6;
+  line-height: 1.6; 
 }
 
 h1 {
@@ -18,6 +18,77 @@ h1 {
   color: #1f3b5b;
   margin-bottom: 30px;
 }
+
+.intro, .grammar-summary, .reading-strategies {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.grammar-summary ul,
+.reading-strategies ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.grammar-summary li,
+.reading-strategies li {
+  margin-bottom: 8px;
+}
+
+/* .fixed-intro {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 90vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+} */
+
+.top-fixed-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  text-align: center;
+  overflow-y: auto;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Adiciona espaço no topo para o conteúdo abaixo da introdução fixa */
+body {
+  padding-top: 320px; /* um pouco mais que a altura da div fixa */
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .top-fixed-intro {
+    position: static;
+    max-height: none;
+    box-shadow: none;
+  }
+
+  body {
+    padding-top: 0;
+  }
+}
+
+
+body {
+  margin-left: 340px; /* espaço para não sobrepor o conteúdo */
+}
+
 
 h2 {
   margin-top: 40px;
