@@ -5,6 +5,8 @@
   padding: 0;
 }
 
+
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f2f6fa;
@@ -12,6 +14,7 @@ body {
   padding: 30px;
   line-height: 1.6; 
 }
+
 
 h1 {
   text-align: center;
@@ -22,7 +25,7 @@ h1 {
 .intro, .grammar-summary, .reading-strategies {
   background: #ffffff;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -66,12 +69,10 @@ h1 {
   z-index: 999;
 }
 
-/* Adiciona espaço no topo para o conteúdo abaixo da introdução fixa */
 body {
-  padding-top: 320px; /* um pouco mais que a altura da div fixa */
+  padding-top: 320px; 
 }
 
-/* Responsivo para mobile */
 @media (max-width: 768px) {
   .top-fixed-intro {
     position: static;
@@ -82,11 +83,6 @@ body {
   body {
     padding-top: 0;
   }
-}
-
-
-body {
-  margin-left: 340px; /* espaço para não sobrepor o conteúdo */
 }
 
 
